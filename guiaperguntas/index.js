@@ -1,19 +1,17 @@
 const express = require("express");
 const app = express();
 app.set('view engine', 'ejs');
+app.use(express.static('public')) // arquivos estaticos em public
 
-app.get("/:nome/:lang", (req, res) => {
-    let name = req.params.nome
-    let lang = req.params.lang
-    let media = (0.6 + 4.5)/2.0
-    res.render("index.ejs", {
-        nome: name,
-        lang: lang,
-        number: 100,
-        media: media.toFixed(1)
-    })
+app.get("/", (req, res) => {
+    
+    res.render("index.ejs");
 });
 
+app.get("/toask", (req, res) => {
+    
+    res.render("Toask.ejs");
+})
 
 
 
