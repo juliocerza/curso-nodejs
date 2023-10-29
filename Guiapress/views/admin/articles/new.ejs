@@ -1,0 +1,37 @@
+<%- include('../../partials/header.ejs')%> <%-
+include('../../partials/navbar.ejs')%>
+
+<div class="container">
+    <br>
+    <div class="card">
+    <div class="card-header">
+        <h2>Novo Artigo</h2>
+    </div>
+      <div class="card-body">
+        <form method="post" action="/categories/save">
+            <input
+              class="form-control"
+              type="text"
+              name="title"
+              placeholder="Insert the article title"
+            /><br />
+            <textarea name="body" placeholder="Escreva o artigo aqui" class="form-control" id="artigo"></textarea><br />
+            <button class="btn btn-success">Cadastrar</button>
+        </form>
+      </div>
+    
+  </div>
+</div>
+
+<%- include('../../partials/footer.ejs')%>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.7.2/tinymce.min.js" integrity="sha512-AHsE0IVoihNpGako20z2Tsgg77r5h9VS20XIKa+ZZ8WzzXxdbiUszgVUmXqpUE8GVUEQ88BKQqtlB/xKIY3tUg==" crossorigin="anonymous"></script>
+<script>
+    tinymce.init({
+        selector: "#artigo",
+        plugins: [
+            'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+        ]
+    });
+</script>
+
+
